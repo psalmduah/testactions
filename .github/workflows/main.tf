@@ -1,12 +1,13 @@
 provider "aws" {}
 
-/*
-resource "aws_vpc" "test" {
-    cidr_block = "10.0.0.0/16"
 
-    tags = {
-        Name = "Actions-Test"
-    }
-       
+resource "aws_instance" "test_ds" {
+    ami           = data.aws_ami.amzlinux_ami.id
+    instance_type = "t2.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
 }
-*/
+ 
+
